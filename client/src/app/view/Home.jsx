@@ -1,4 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap"
+import CreateUser from "./user/Create"
+import LoginUser from "./user/Login";
 
 const Home = () => {
 	return (
@@ -8,8 +10,12 @@ const Home = () => {
 				<h3>Free pickup Game Finder and Organizer</h3>
 			</Row>
 			<Row className="mt-3">
-				<Col className="border border-dark me-3">Registro</Col>
-				<Col className="border border-dark ms-3">Login</Col>
+				<Col className="border border-dark me-3">
+					<CreateUser />
+				</Col>
+				<Col className="border border-dark ms-3">
+					<LoginUser />
+				</Col>
 			</Row>
 		</Container>
 	);
