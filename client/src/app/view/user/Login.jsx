@@ -1,4 +1,5 @@
 import { Form, Button, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom"
 
 const LoginUser = () => {
 	return (
@@ -19,8 +20,8 @@ const LoginUser = () => {
 			</Form.Group>
 
 			<Col>
-			<Button variant="primary" type="submit">
-				Register
+			<Button as={Link} to="/dashboard" variant="primary" type="submit">
+				Login
 			</Button>
 			</Col>
 		</Form>
