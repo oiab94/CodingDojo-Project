@@ -1,8 +1,9 @@
-import { Children } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../view/Home";
 import Dashboard from "../view/Dashboard";
 import Welcome from "../view/dashboard/Welcome";
+import EventTable from "../view/dashboard/Event";
+import Search from "../view/dashboard/Search";
 
 
 const Routes = () => {	
@@ -18,6 +19,14 @@ const Routes = () => {
 				{
 					path:"/dashboard",
 					element:<Welcome />
+				},
+				{
+					path:"/dashboard/event",
+					element:<EventTable />
+				},
+				{
+					path:"/dashboard/search",
+					element:<Search />
 				}
 			]
 		}
