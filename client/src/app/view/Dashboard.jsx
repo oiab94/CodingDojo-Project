@@ -17,7 +17,7 @@ const Dashboard = () => {
 						</Nav.Item>
 
 						<Nav.Item>
-							<Nav.Link eventKey="link-2">Search</Nav.Link>
+							<Nav.Link as={Link} to="/dashboard/search">Search</Nav.Link>
 						</Nav.Item>
 						
 						<Nav.Item>
