@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 const TableDisplay = (props) => {
 	const values = props.values;
 
@@ -9,7 +11,7 @@ const TableDisplay = (props) => {
 
 				return (
 					<tr key={index}>
-						<td>{ name }</td>
+						<td><Link to="/dashboard/event">{ name }</Link></td>
 						<td>{ location }</td>
 						<td>{ attendes }</td>
 						<td>{ date }</td>
