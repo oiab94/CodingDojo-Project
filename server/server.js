@@ -21,4 +21,5 @@ app.use(express.json()); // Permite el ingreso de JSON
 app.use(cors(corsConfig)); 
 app.use(cookieParser()) // Permite la utilizacion de cookies
 
-
+// * Configuración de la DB
+require("./configs/mongoose.config");
