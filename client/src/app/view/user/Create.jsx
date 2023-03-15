@@ -1,42 +1,52 @@
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { useState } from "react";
+import { Form, Button, Col } from "react-bootstrap";
+import BasicForm from "../../components/user/BasicForm";
 
 const CreateUser = () => {
+	const [firstName, setFirstName]= useState("");
+	const [lastName, setLastName] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [birthdate, setBirthdate]= useState(null);
+
+	// * Maneja el submit
+	const handleSubmit = (event) => {
+		event.preventDefault();
+
+		
+	}
+
 	return (
-		<Form className="p-3">
-			<Form.Group as={Row} className="mb-3">
-        <Form.Label column sm={3} >First Name</Form.Label>
-        <Col sm={6}>
-					<Form.Control type="text" placeholder="First Name" />
-				</Col>
-      </Form.Group>
+		<Form className="p-3" onSubmit={handleSubmit}>
+			<BasicForm 
+				label="First Name"
+				type="text"
+				placeholder="First Name" 
+				onChange={({ target }) => setFirstName(target.value)} />
 			
-			<Form.Group as={Row} className="mb-3">
-        <Form.Label column sm={3}>Last Name</Form.Label>
-				<Col sm={6}>
-        	<Form.Control type="text" placeholder="Last Name" />
-				</Col>
-      </Form.Group>
+			<BasicForm 
+				label="Last Name"
+				type="text"
+				placeholder="Last Name" 
+				onChange={({ target }) => setLastName(target.value)} />
 
-			<Form.Group as={Row} className="mb-3">
-				<Form.Label column sm={3}>Email address</Form.Label>
-				<Col sm={6}>
-					<Form.Control type="text" placeholder="Enter email" />
-				</Col>
-			</Form.Group>
+			<BasicForm 
+				label="Email address"
+				type="text"
+				placeholder="Enter email" 
+				onChange={({ target }) => setEmail(target.value)} />
 
-			<Form.Group as={Row} className="mb-3">
-				<Form.Label column sm={3}>Password</Form.Label>
-				<Col sm={6}>
-					<Form.Control type="password" placeholder="Password" />
-				</Col>
-			</Form.Group>
+			<BasicForm 
+				label="Password"
+				type="password"
+				placeholder="Password" 
+				onChange={({ target }) => setPassword(target.value)} />
 
-			<Form.Group as={Row} className="mb-3">
-				<Form.Label column sm={3}>Birthdate</Form.Label>
-				<Col sm={6}>
-					<Form.Control type="date" placeholder="Password" />
-				</Col>
-			</Form.Group>
+			<BasicForm 
+				label="Birthdate"
+				type="date"
+				placeholder="date" 
+				onChange={({ target }) => setBirthdate(target.value)} />
 
 			<Col>
 			<Button variant="primary" type="submit">
