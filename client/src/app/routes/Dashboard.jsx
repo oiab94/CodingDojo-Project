@@ -5,6 +5,7 @@ import Welcome from "../view/dashboard/Welcome";
 import EventTable from "../view/dashboard/Event";
 import Search from "../view/dashboard/Search";
 import Protected from "../components/Protected";
+import NewEvent from "../view/dashboard/NewEvent";
 
 
 const Routes = () => {	
@@ -24,6 +25,10 @@ const Routes = () => {
 				{
 					path:"/dashboard",
 					element:<Welcome />
+				},
+				{
+					path:"/dashboard/new",
+					element: <NewEvent />,
 				},
 				{
 					path:"/dashboard/event",
