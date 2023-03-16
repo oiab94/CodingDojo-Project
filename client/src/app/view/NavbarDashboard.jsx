@@ -2,7 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import { Outlet, Link } from "react-router-dom"
 
-const Dashboard = () => {
+const NavbarDashboard = () => {
 	return (
 		<Container>
 			<Row>
@@ -35,4 +35,4 @@ const Dashboard = () => {
 		</Container>
 	);
 }
-export default Dashboard;
+export default NavbarDashboard;

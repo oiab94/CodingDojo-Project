@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../view/Home";
-import Dashboard from "../view/Dashboard";
+import NavbarDashboard from "../view/NavbarDashboard";
 import Welcome from "../view/dashboard/Welcome";
 import EventTable from "../view/dashboard/Event";
 import Search from "../view/dashboard/Search";
@@ -14,7 +14,7 @@ const Routes = () => {
 		},
 		{
 			path: "/dashboard",
-			element: <Dashboard />,
+			element: <NavbarDashboard />,
 			children:[
 				{
 					path:"/dashboard",
