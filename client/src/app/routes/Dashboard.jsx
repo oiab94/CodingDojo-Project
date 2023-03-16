@@ -13,7 +13,6 @@ const Routes = () => {
 			element: <Home />
 		},
 		{
-			path: "/dashboard",
 			element: <NavbarDashboard />,
 			children:[
 				{
