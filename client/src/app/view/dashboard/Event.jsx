@@ -1,9 +1,29 @@
-import { Container, Accordion, Row, Col, Image } from "react-bootstrap"
-import { events } from "../../test/dashboard.test"
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Container, Accordion, Row, Col, Image } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
+const EventTable = (props) => {
+	const { id } = useParams();
+	const URL = "http://localhost:8000/api";
+	const [title, setTitle] = useState("");
+	const [date, setDate] = useState("");
+	const [time, setTime] = useState("");
+	const [information, setInformation] = useState("");
 
-const EventTable = () => {
-	const values = events;
+	useEffect(() => {
+		axios.get(
+			URL + "/event/" + id,
+			{withCredentials: true}
+		)
+			.then(({ data }) => {
+				setTitle(data.title);
+				setDate(data.date);
+				setTime(data.time);
+				setInformation(data.information);
+			})
+			.catch(error => console.log(error))
+	}, []);
 
 	return (
 		<>
@@ -14,15 +34,15 @@ const EventTable = () => {
 					<Accordion.Item eventKey="0">
 						<Accordion.Header>Event Date</Accordion.Header>
 						<Accordion.Body>
-							<span>Title: { values[0].name }</span><br />
-							<span>Date: { values[0].date }</span><br />
-							<span>Time: 4 pm</span><br />
+							<span>Title: { title }</span><br />
+							<span>Date: { date.slice(0, 10) }</span><br />
+							<span>Time: { time }</span><br />
 						</Accordion.Body>
 					</Accordion.Item>
 
 					<Accordion.Item eventKey="1">
 						<Accordion.Header>Information</Accordion.Header>
-						<Accordion.Body>Se escribe alguna informacion</Accordion.Body>
+						<Accordion.Body>{ information }</Accordion.Body>
 					</Accordion.Item>
 
 					<Accordion.Item eventKey="2">
