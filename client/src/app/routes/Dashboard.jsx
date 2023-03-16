@@ -4,6 +4,7 @@ import NavbarDashboard from "../view/NavbarDashboard";
 import Welcome from "../view/dashboard/Welcome";
 import EventTable from "../view/dashboard/Event";
 import Search from "../view/dashboard/Search";
+import Protected from "../components/Protected";
 
 
 const Routes = () => {	
@@ -13,7 +14,12 @@ const Routes = () => {
 			element: <Home />
 		},
 		{
-			element: <NavbarDashboard />,
+			element: 
+			<>
+				<Protected>
+					<NavbarDashboard />
+				</Protected>
+			</>,
 			children:[
 				{
 					path:"/dashboard",
