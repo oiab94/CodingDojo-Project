@@ -42,4 +42,13 @@ module.exports.event_post = (req, res) => {
 
 			res.status(400).json(error);
 		})
+	}
+
+// * GET events
+module.exports.event_get = (req, res) => {
+	Event.find({})
+		.then(events => {
+			res.status(200).json(events)
+		})
+		.catch(errors => res.status(400).json(errors))
 } 
