@@ -9,11 +9,11 @@ const NavbarDashboard = () => {
 				<Col>		
 					<Nav justify activeKey="/dashboard" className="fs-2 p-3">
 						<Nav.Item>
-							<Nav.Link as={Link} to="/dashboard" >Home</Nav.Link>
+							<Nav.Link as={ Link } to="/dashboard" >Home</Nav.Link>
 						</Nav.Item>
 
 						<Nav.Item>
-							<Nav.Link eventKey="link-1">New</Nav.Link>
+							<Nav.Link as={ Link } to="/dashboard/new">New</Nav.Link>
 						</Nav.Item>
 
 						<Nav.Item>
