@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
 import { Container, Row, Col, Table } from "react-bootstrap"
 import TableDisplay from "../../components/TableDisplay";
-import { events } from "../../test/dashboard.test"
+import axios from "axios";
 
 const Welcome = () => {
-	const values = events;
+	const URL = "http://localhost:8000/api";
+	const [values, setValues] = useState([]);
+	
+	useEffect(() => {
+		axios.get(
+			URL + "/event",
+			{withCredentials: true})
+			.then(events => setValues(events.data))
+			.catch(error => console.log(error))
+	}, []);
 
 	return (
 		<>
