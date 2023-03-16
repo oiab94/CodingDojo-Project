@@ -31,7 +31,7 @@ const Routes = () => {
 					element: <NewEvent />,
 				},
 				{
-					path:"/dashboard/event",
+					path:"/dashboard/event/:id",
 					element:<EventTable />
 				},
 				{
