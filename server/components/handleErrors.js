@@ -17,6 +17,11 @@ module.exports.handleErrors = function ({errors, message, code}) {
 		})
 
 		// * Validacion de errores al hacer login
+		if(message === "Incorrect email")
+			error.email = "Email is incorrect";
+		
+		if(message === "Incorrect password")
+			error.password = "Password is incorrect";
 
 		return error;
 }
