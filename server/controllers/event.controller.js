@@ -51,4 +51,11 @@ module.exports.event_get = (req, res) => {
 			res.status(200).json(events)
 		})
 		.catch(errors => res.status(400).json(errors))
-} 
+}
+
+// * GET one event
+module.exports.event_get_id = (req, res) => {
+	Event.findOne({_id: req.params.id})
+		.then(event => res.status(200).json(event))
+		.catch(error => res.status(400).json(error));
+}
