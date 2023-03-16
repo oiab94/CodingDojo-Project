@@ -6,6 +6,7 @@ import EventTable from "../view/dashboard/Event";
 import Search from "../view/dashboard/Search";
 import Protected from "../components/Protected";
 import NewEvent from "../view/dashboard/NewEvent";
+import Logout from "../view/user/Logout";
 
 
 const Routes = () => {	
@@ -37,6 +38,10 @@ const Routes = () => {
 				{
 					path:"/dashboard/search",
 					element:<Search />
+				},
+				{
+					path:"/dashboard/account",
+					element:<Logout />
 				}
 			]
 		}
