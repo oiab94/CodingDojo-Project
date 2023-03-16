@@ -2,6 +2,7 @@ import { Form, Button, Col } from "react-bootstrap";
 import BasicForm from "../../components/user/BasicForm";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginUser = () => {
 	const URL = "http://localhost:8000/api";
@@ -9,6 +10,7 @@ const LoginUser = () => {
 	const [ password, setPassword ] = useState("");
 	const [ isEmailValid, setIsEmailValid ] = useState("");
 	const [ isPasswordValid, setIsPasswordValid ]= useState("");
+	const navigate = useNavigate();
 
 	const handleLogin = (event) => {
 		event.preventDefault();
@@ -18,7 +20,9 @@ const LoginUser = () => {
 			{ email, password },
 			{withCredentials: true})
 			.then(user => {
+				// Si el login es exitoso nos envia al Dashboard
 				window.localStorage.setItem("userID",user.data["userID"])
+				navigate("/dashboard");
 			})
 			.catch(({ response }) => {
 				setIsEmailValid(response.data["email"]);
