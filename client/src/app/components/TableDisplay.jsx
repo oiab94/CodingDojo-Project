@@ -7,14 +7,14 @@ const TableDisplay = (props) => {
 		<>
 		{
 			values.map((item, index) => {
-				let {name, location, attendes, date} = item;
+				let {title, location, attendes, date} = item;
 
 				return (
 					<tr key={index}>
-						<td><Link to="/dashboard/event">{ name }</Link></td>
+						<td><Link to="/dashboard/event">{ title }</Link></td>
 						<td>{ location }</td>
 						<td>{ attendes }</td>
-						<td>{ date }</td>
+						<td>{ date.slice(0, 10) }</td>
 					</tr>
 				);
 			})	
