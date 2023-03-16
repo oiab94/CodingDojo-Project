@@ -21,7 +21,7 @@ const NavbarDashboard = () => {
 						</Nav.Item>
 						
 						<Nav.Item>
-							<Nav.Link eventKey="disabled">Account</Nav.Link>
+							<Nav.Link as={Link} to="/dashboard/account">Account</Nav.Link>
 						</Nav.Item>
 					</Nav>
 				</Col>	
